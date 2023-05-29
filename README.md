@@ -12,59 +12,41 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You may also see any lint errors in the console.\
 
-### `npm test`
+## Répartition dans le temps et priorité
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**->** Remettre la base déjà existante suite au live coding -> **20 minutes**\
+_Petit fail avec TS, pour ca que le repo est en JS_
 
-### `npm run build`
+**->** Création des composants de style : **1 heure**\
+-IconButton\
+-Tooltip\
+-Drawer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**->** Mise en place du style : **1 heure**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**->** Ajout de la feature du bloquage de l'autoscroll au scroll top : **30 minutes**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**->** Ajout des paramètres d'identité de discussion : **30 minutes**\
+-Badge Global\
+-Couleur du pseudo
 
-### `npm run eject`
+**->** Ajout des bandeaux sub et bits : **10 minutes**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**->** Ajout des points de chaine : **20 minutes**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**->** Ajout des emojis
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**->** Ajout des paramètres de préférences du chat:
+-Chat en pause\
+-Aspect du chat\
+-Attribution d'émoticônes\
+-Voir les règles de chat\
+-Masquer discussion\
+-Chat fenêtré
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**->** Ajout de la communauté
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Du coup, voici ce que j'ai pu sortir en 3h50.
+Si j'avais plus de temps, j'aurais ajouté les Emojis avant les points de chaine, mais j'aurais certainement dépassé les 4 heures.

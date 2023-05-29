@@ -1,7 +1,12 @@
+import { Block } from "@material-ui/icons";
 import { Tooltip } from "../../Tooltip/Tooltip";
 import "./drawer-update-user.css";
 
-export const DrawerUpdateUser = ({ user, updateUser }) => {
+export const DrawerUpdateUser = ({
+  user,
+  updateUserColor,
+  updateUserGlobalBadge,
+}) => {
   const colors = [
     {
       name: "Bleu",
@@ -45,11 +50,31 @@ export const DrawerUpdateUser = ({ user, updateUser }) => {
             <img
               src="https://static-cdn.jtvnw.net/badges/v1/bbbe0db0-a598-423e-86d0-f9fb98ca1933/2"
               alt="prime"
-              className="User-Prime"
+              className="Badge"
             />
           )}
           <p style={{ color: user.color, fontWeight: 600 }}>{user.username}</p>
         </div>
+      </div>
+      <div className="Global-Badge">
+        <p className="Drawer-Update-User-Title">Badge Global</p>
+        <p className="Drawer-Update-User-Body">
+          Ce badge apparaît sur toutes les chaînes et dans les chuchotements.
+        </p>
+        {user.prime.enabled && (
+          <img
+          onClick={() => updateUserGlobalBadge(true)}
+            src="https://static-cdn.jtvnw.net/badges/v1/bbbe0db0-a598-423e-86d0-f9fb98ca1933/2"
+            alt="prime"
+            className={
+              user.prime.display ? "Badge-Selected" : "Badge"
+            }
+          />
+        )}
+        <Block
+          onClick={() => updateUserGlobalBadge(false)}
+          className={user.prime.display ? "Badge Block" : "Badge-Selected"}
+        />
       </div>
       <div>
         <div className="User-Color">
@@ -67,7 +92,7 @@ export const DrawerUpdateUser = ({ user, updateUser }) => {
                     <div
                       className="Color"
                       style={{ backgroundColor: color.color }}
-                      onClick={() => updateUser(color.color)}
+                      onClick={() => updateUserColor(color.color)}
                     />
                   </Tooltip>
                 </div>

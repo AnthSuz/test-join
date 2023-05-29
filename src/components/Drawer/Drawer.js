@@ -8,7 +8,7 @@ export const Drawer = ({ title, content, children }) => {
   return (
     <div className="Drawer">
       {open && (
-        <div className="test">
+        <div className="Drawer-Container">
           <div className="Header-Drawer">
             <p>{title}</p>
             <Close className="Close-Drawer" onClick={() => setOpen(false)} />

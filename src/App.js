@@ -6,6 +6,7 @@ import { Header } from "./components/Header/Header";
 import { Drawer } from "./components/Drawer/Drawer";
 import "./App.css";
 import { Pause } from "@material-ui/icons";
+import { Icon } from "@material-ui/core";
 import { DrawerUpdateUser } from "./components/Drawer/DrawerUpdateUser/DrawerUpdateUser";
 
 const CONNECTION_URL = "wss://api.dev.stories.studio/";
@@ -34,12 +35,24 @@ const App = () => {
       display: true,
     },
   });
+  const [displayButtonWinPoint, setDisplayButtonWinPoint] = useState(true);
+  const [point, setPoint] = useState(10);
   const chat = useRef(null);
 
-  const updateUser = (color) => {
+  const updateUserColor = (color) => {
     setUser({
       ...user,
       color,
+    });
+  };
+
+  const updateUserGlobalBadge = (value) => {
+    setUser({
+      ...user,
+      prime: {
+        ...user.prime,
+        display: value,
+      },
     });
   };
 
@@ -88,6 +101,14 @@ const App = () => {
     }
   }, [messages, activateAutoScroll]);
 
+  useEffect(() => {
+    if (!displayButtonWinPoint) {
+      setTimeout(() => {
+        setDisplayButtonWinPoint(true);
+      }, 10000);
+    }
+  }, [displayButtonWinPoint]);
+
   return (
     <div>
       <Header />
@@ -100,6 +121,7 @@ const App = () => {
         }}
         className="Messages"
       >
+        <h6>Bienvenue sur le chat !</h6>
         {messages.map((message, index) => {
           return (
             <div key={`message-${index}`} className="Message">
@@ -109,7 +131,7 @@ const App = () => {
                   <img
                     src="https://static-cdn.jtvnw.net/badges/v1/bbbe0db0-a598-423e-86d0-f9fb98ca1933/2"
                     alt="prime"
-                    className="User-Prime"
+                    className="Badge"
                   />
                 )}
               <span className="Username" style={{ color: message.user.color }}>
@@ -130,10 +152,16 @@ const App = () => {
           </button>
         )}
       </div>
-      <form onSubmit={sendMessage}>
-        <div className="Input-Message">
+      <div >
+        <form onSubmit={sendMessage} className="Input-Message">
           <Drawer
-            content={<DrawerUpdateUser user={user} updateUser={updateUser} />}
+            content={
+              <DrawerUpdateUser
+                user={user}
+                updateUserColor={updateUserColor}
+                updateUserGlobalBadge={updateUserGlobalBadge}
+              />
+            }
             title="Identité de discussion"
           >
             <div className="Prime">
@@ -156,10 +184,23 @@ const App = () => {
           <div className="Emoji">
             <IconButton iconName="sentiment_satisfied" />
           </div>
-        </div>
+        </form>
 
         <div className="Bottom-Input-Message">
-          <div>POINTS</div>
+          <div className="Points-Content">
+            <button className="Points">{point} Points</button>
+            {displayButtonWinPoint && (
+              <button
+              className="Points-Button"
+                onClick={() => {
+                  setPoint(point + 50);
+                  setDisplayButtonWinPoint(false);
+                }}
+              >
+                <Icon className="Points-Button-Icon">inventory_2</Icon>
+              </button>
+            )}
+          </div>
           <div className="Right-Bottom-Input-Message">
             <Tooltip text="Paramètres du chat">
               <IconButton iconName="settings" />
@@ -169,7 +210,7 @@ const App = () => {
             </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

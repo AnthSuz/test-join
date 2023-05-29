@@ -3,7 +3,7 @@ form {
 }
 
 .Messages {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 205px);
   overflow: auto;
   position: relative;
 }
@@ -52,8 +52,8 @@ form {
 
 .Emoji {
   position: absolute;
-  top: 3.5px;
-  right: 3.5px;
+  top: 12.5px;
+  right: 12.5px;
   max-height: 30px !important;
 }
 
@@ -82,7 +82,8 @@ input:focus {
 .Bottom-Input-Message {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  align-items: center;
+  padding: 0 10px 10px 10px;
 }
 
 .Right-Bottom-Input-Message {
@@ -102,4 +103,46 @@ input:focus {
 .Chat-Button:hover {
   cursor: pointer;
   background-color: #772ce8;
+}
+
+.Points-Content {
+  display: flex;
+  align-items: center;
+}
+
+.Points {
+  margin: 0;
+  font-weight: 600;
+  margin-right: 20px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.Points:hover {
+  cursor: pointer;
+  background-color: #e3e3e6;
+}
+
+.Points-Button {
+  border: none;
+  background-color: #00db84;
+  border-radius: 4px;
+}
+
+.Points-Button-Icon {
+  height: 20px;
+  width: 20px;
+}
+
+.Points-Button:hover {
+  cursor: pointer;
+  background-color: #a8ffdc;
+}
+
+h6 {
+  margin: 0;
+  padding: 10px;
+  color: grey;
 }
