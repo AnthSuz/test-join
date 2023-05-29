@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+form {
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Messages {
+  height: calc(100vh - 200px);
+  overflow: auto;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Message {
+  padding: 5px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Active-AutoScroll-Button {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.Active-AutoScroll-Button span {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Active-AutoScroll-Button:hover span {
+  display: none;
+}
+
+.Active-AutoScroll-Button:hover:before {
+  cursor: pointer;
+  content: "Voir les nouveaux messages" !important;
+  padding: 10px !important;
+}
+
+.Input-Message {
+  position: relative;
+}
+
+.Prime {
+  position: absolute;
+  top: 3.5px;
+  left: 3.5px;
+}
+
+.Emoji {
+  position: absolute;
+  top: 3.5px;
+  right: 3.5px;
+  max-height: 30px !important;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #737373;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+input:hover {
+  box-shadow: 0 0 0 2px #737373;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px #9146ff;
+}
+
+.Username {
+  font-weight: 500;
+}
+
+.Bottom-Input-Message {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.Right-Bottom-Input-Message {
+  display: flex;
+}
+
+.Chat-Button {
+  background-color: #9146ff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 0 10px;
+  margin-left: 5px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Chat-Button:hover {
+  cursor: pointer;
+  background-color: #772ce8;
 }

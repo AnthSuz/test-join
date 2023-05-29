@@ -1,0 +1,28 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid hsla(240, 7%, 70%, 0.35);
+}
+
+.Header h4 {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.Sub-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsla(240, 7%, 70%, 0.35);
+}
+
+.Sub-Header p {
+  color: #772ce8;
+  font-weight: 600;
+}
+
+.Chevron:hover {
+  cursor: pointer;
+  background-color: grey;
+}

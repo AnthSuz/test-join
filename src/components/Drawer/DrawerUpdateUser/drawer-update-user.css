@@ -1,0 +1,58 @@
+.Drawer-Update-User {
+  border-bottom: 1px solid hsla(240, 7%, 70%, 0.35);
+}
+
+.User-Style {
+  padding: 10px;
+  background-color: #efeff1;
+}
+
+.Drawer-Update-User-Title {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.Drawer-Update-User-Body {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.User-Style-Username {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.User-Style-Username p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.User-Prime {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.User-Color {
+  padding: 10px;
+  background-color: white;
+  overflow: scroll;
+}
+
+.Color-List {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.Color {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #efeff1;
+  content: "";
+}
